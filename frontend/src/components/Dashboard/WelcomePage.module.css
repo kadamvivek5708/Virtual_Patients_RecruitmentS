@@ -1,0 +1,210 @@
+/* src/components/WelcomePage.module.css */
+
+.welcomePage {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #ffffff;
+}
+
+/* --- Hero Section --- */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  background: radial-gradient(1100px 220px at 50% -10%, rgba(37,99,235,0.25), transparent),
+              linear-gradient(45deg, rgba(20, 30, 80, 0.9), rgba(50, 100, 150, 0.9)),
+              url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2070') center/cover no-repeat;
+  color: #fff;
+}
+
+.heroContent {
+  max-width: 880px;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.heroTitle {
+  font-size: 3.8rem; /* larger */
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+
+.heroSubtitle {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+}
+
+.quickActions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 0.75rem;
+}
+.quickBtn {
+  border: none;
+  padding: 0.65rem 1rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform .2s ease, background .2s ease;
+  text-decoration: none; /* remove underline */
+}
+.quickBtn:hover { transform: translateY(-2px); background: rgba(255,255,255,0.2); text-decoration: none; }
+
+.ctaButton {
+  padding: 1rem 2.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(37,99,235,0.2);
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow .25s;
+}
+
+.ctaButton:hover {
+  transform: translateY(-3px);
+  background-color: #1d4ed8;
+  box-shadow: 0 14px 28px rgba(37,99,235,0.28);
+}
+
+/* --- Section Base Styles --- */
+.features, .howItWorks, .testimonials, .finalCta {
+  padding: 4.5rem 2rem;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: 2.6rem;
+  font-weight: 700;
+  margin-bottom: 2.25rem;
+  color: #141e50;
+}
+
+/* --- Features Section --- */
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  background-color: #f8f9fa;
+}
+
+.featureCard {
+  flex: 1;
+  min-width: 260px;
+  max-width: 340px;
+  padding: 1.25rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.featureCard:hover { transform: translateY(-4px); box-shadow: 0 10px 20px rgba(0,0,0,0.08); border-color: #c7d2fe; }
+
+.featureIcon {
+  font-size: 3rem;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.featureTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* --- How It Works Section --- */
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #e0e0e0;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timelineItem {
+  padding: 1rem 4rem;
+  position: relative;
+  width: 50%;
+}
+
+.timelineItem:nth-child(odd) { left: 0; }
+.timelineItem:nth-child(even) { left: 50%; }
+
+.timelineIcon {
+  position: absolute;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #2563eb;
+  border-radius: 50%;
+  top: 20px;
+  z-index: 1;
+  box-shadow: 0 6px 16px rgba(37,99,235,0.3);
+}
+
+.timelineItem:nth-child(odd) .timelineIcon { right: -26px; }
+.timelineItem:nth-child(even) .timelineIcon { left: -26px; }
+
+.timelineContent {
+  padding: 1.25rem 1.5rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  text-align: left;
+  border: 1px solid #e5e7eb;
+}
+
+/* --- Testimonials Section --- */
+.testimonials { background-color: #eef2ff; }
+.testimonialGrid { display: flex; gap: 1.25rem; flex-wrap: wrap; justify-content: center; }
+.testimonialCard {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+  max-width: 420px;
+  border-left: 6px solid #2563eb;
+}
+.testimonialCard blockquote { font-size: 1.05rem; font-style: italic; margin: 0 0 1rem; color: #4b5563; }
+.testimonialCard cite { font-weight: 700; color: #141e50; }
+
+/* --- Final CTA Section --- */
+.finalCta { background-color: #141e50; color: #fff; }
+.ctaContent { max-width: 760px; margin: 0 auto; }
+.ctaIcon { font-size: 4rem; margin-bottom: 1rem; }
+.finalCta h2 { font-size: 2.6rem; margin-bottom: 1rem; }
+.finalCta p { opacity: 0.95; margin-bottom: 1.5rem; }
+
+/* --- Animations --- */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 768px) {
+  .heroTitle { font-size: 2.6rem; }
+  .timeline::after { left: 25px; }
+  .timelineItem { width: 100%; padding-left: 70px; padding-right: 0; }
+  .timelineItem:nth-child(even) { left: 0; }
+  .timelineIcon { left: 0; }
+}

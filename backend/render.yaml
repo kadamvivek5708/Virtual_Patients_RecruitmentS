@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: virtual-patient-backend
+    env: python
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: gunicorn app:app -w 2 -k gthread -t 120 --threads 8 --bind 0.0.0.0:$PORT
+    plan: free
+    autoDeploy: true
+    rootDir: backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11
+      # Set DATABASE_URL from Render dashboard (recommended)
+      # - key: DATABASE_URL
+      #   sync: false
+      # Set FRONTEND_ORIGIN to your deployed Vercel URL for CORS
+      # - key: FRONTEND_ORIGIN
+      #   value: https://your-frontend.vercel.app

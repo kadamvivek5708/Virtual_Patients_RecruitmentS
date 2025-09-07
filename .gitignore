@@ -1,0 +1,69 @@
+### OS / Editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+### Git merge tools
+*.orig
+
+### Python (backend)
+__pycache__/
+*.py[cod]
+*.pyd
+*.pyo
+*.pyc
+*.so
+.venv/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+pip-log.txt
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.pytype/
+.eggs/
+*.egg-info/
+build/
+dist/
+
+### Node / React (frontend)
+node_modules/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.eslintcache
+.stylelintcache
+.cache
+*.tgz
+
+# Frontend build artifacts (explicit paths for clarity)
+frontend/node_modules/
+frontend/build/
+frontend/coverage/
+frontend/.eslintcache
+frontend/.stylelintcache
+frontend/.cache
+
+### Environment files (do not commit secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# Keep example envs
+!.env.example
+
+### Logs and PIDs
+logs/
+*.log
+pids/
+*.pid
+*.pid.lock

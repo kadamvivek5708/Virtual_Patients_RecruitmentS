@@ -1,0 +1,172 @@
+/* src/components/Auth/AuthForm.module.css */
+
+.authContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: radial-gradient(800px 300px at 50% -10%, rgba(37,99,235,0.15), transparent), #f0f4f8;
+  font-family: 'Poppins', sans-serif;
+}
+
+.authCard {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 460px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.authCard::before {
+  content: '';
+  position: absolute;
+  inset: -40% -40% auto -40%;
+  height: 200px;
+  background: radial-gradient(800px 200px at 50% -10%, rgba(37,99,235,0.15), transparent);
+  pointer-events: none;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  color: #64748b;
+  margin-bottom: 1.75rem;
+}
+
+.inputGroup {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.inputGroup input {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.5rem; /* Padding for icon */
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.05s ease;
+  background: #fff;
+}
+
+.inputGroup input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+  padding: 4px;
+}
+
+.formRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #475569;
+}
+
+.subLink {
+  font-size: 0.9rem;
+  color: #3b82f6;
+  cursor: pointer;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 0.9rem;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #fff;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.2s ease, filter 0.3s ease;
+  margin-top: 1rem;
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.submitButton:hover {
+  filter: brightness(1.02);
+}
+
+.submitButton:active {
+  transform: translateY(1px);
+}
+
+.btnSpinner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.6);
+  border-top-color: #fff;
+  display: inline-block;
+  animation: spin 0.8s linear infinite;
+}
+
+.redirectText {
+  margin-top: 1.25rem;
+  color: #64748b;
+}
+
+.redirectText a {
+  color: #2563eb;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.redirectText a:hover {
+  text-decoration: underline;
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
