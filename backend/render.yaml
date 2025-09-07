@@ -9,7 +9,7 @@ services:
     rootDir: backend
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 3.11.9
       # Set DATABASE_URL from Render dashboard (recommended)
       # - key: DATABASE_URL
       #   sync: false
