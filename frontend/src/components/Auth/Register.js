@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaUser, FaEnvelope, FaLock } from 'react-icons/fa';
 import styles from './AuthForm.module.css';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import { apiService } from '../../services/api';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -29,7 +29,7 @@ const Register = () => {
 
     try {
       // Call Flask backend
-      const response = await axios.post("http://localhost:5000/api/register", {
+      const response = await apiService.register({
         username: formData.username,
         password: formData.password,
       });
