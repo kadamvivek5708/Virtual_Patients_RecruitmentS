@@ -48,6 +48,14 @@ register_error_handlers(app)
 def health():
     return jsonify({"status": "ok"}), 200
 
+# --- Simple root for sanity check when not serving frontend from Flask ---
+@app.route('/', methods=['GET'])
+def root():
+    if os.getenv('SERVE_FRONTEND', 'false').lower() == 'true':
+        # In single-deploy mode, let the SPA handler take over
+        return send_from_directory(app.static_folder, 'index.html')
+    return jsonify({"message": "Backend running", "health": "/api/health"}), 200
+
 # --- Serve React Frontend (optional, for single-deploy mode) ---
 # Enable by setting SERVE_FRONTEND=true and ensuring a build/ directory exists next to app.py
 if os.getenv('SERVE_FRONTEND', 'false').lower() == 'true':
