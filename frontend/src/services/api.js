@@ -38,7 +38,7 @@ api.interceptors.response.use(
 
 export const apiService = {
   // Health check
-  healthCheck: () => api.get('/'),
+  healthCheck: () => api.get('/api/health'),
   
   // Get available trials
   getTrials: () => api.get('/api/trials'),
