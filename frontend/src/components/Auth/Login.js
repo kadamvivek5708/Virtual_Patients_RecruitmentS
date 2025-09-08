@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FaEnvelope, FaLock, FaEye, FaEyeSlash } from 'react-icons/fa';
 import styles from './AuthForm.module.css';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import { apiService } from '../../services/api';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -36,7 +36,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/login', formData);
+      const response = await apiService.login(formData);
 
       if (response.status === 200) {
         const { user_type, role: roleFromBackend, username } = response.data;
