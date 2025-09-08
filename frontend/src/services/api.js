@@ -38,7 +38,11 @@ api.interceptors.response.use(
 
 export const apiService = {
   // Health check
-  healthCheck: () => api.get('/api'),
+  healthCheck: () => api.get('/api/health'),
+
+  // Auth
+  login: (data) => api.post('/api/login', data),
+  register: (data) => api.post('/api/register', data),
   
   // Get available trials
   getTrials: () => api.get('/api/trials'),
